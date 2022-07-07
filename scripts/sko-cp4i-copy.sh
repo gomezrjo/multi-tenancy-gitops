@@ -2,8 +2,32 @@
 
 echo "copying from cp4i-demo repo"
 echo ""
+set -x
+channel_swap () {
+    channel=$(cat $1 | grep channel | cut -d":" -f2 | xargs)
+    oldchnl=$(cat $2 | grep channel | cut -d":" -f2 | xargs)
+    sed -i"bak" "s#${oldchnl}#${channel}#g" $2
+    rm ${2}bak
+}
+instance_swap () {
+    license=$(cat $1 | grep "license:" | cut -d":" -f2 | xargs)
+    version=$(cat $1 | grep "version:" | cut -d":" -f2 | xargs)
+    oldlicn=$(cat $2 | grep "license:" | cut -d":" -f2 | xargs)
+    oldvers=$(cat $2 | grep "version:" | cut -d":" -f2 | xargs)
+    sed -i"bak" "s#${oldlicn}#${license}#g;s#${oldvers}#${version}#g" $2
+    rm ${2}bak
+}
+# subscription updates 
 
-01-platform-navigator-instance.yaml
+channel_swap "../cp4i-demo/subscriptions/2022.2/01-platform-navigator-subscription.yaml" "../multi-tenancy-gitops-services/operators/ibm-platform-navigator/values.yaml"
+channel_swap "../cp4i-demo/subscriptions/2022.2/02-asset-repo-subscription.yaml" "../multi-tenancy-gitops-services/operators/ibm-assetrepository-operator/values.yaml"
+channel_swap "../cp4i-demo/subscriptions/2022.2/03-operations-dashboard-subscription.yaml" "../multi-tenancy-gitops-services/operators/ibm-opsdashboard-operator/values.yaml"
+channel_swap "../cp4i-demo/subscriptions/2022.2/04-api-connect-subscription.yaml" "../multi-tenancy-gitops-services/operators/ibm-apic-operator/values.yaml"
+channel_swap "../cp4i-demo/subscriptions/2022.2/05-event-streams-subscription.yaml" "../multi-tenancy-gitops-services/operators/ibm-eventstreams-operator/values.yaml"
+channel_swap "../cp4i-demo/subscriptions/2022.2/06-mq-subscription.yaml" "../multi-tenancy-gitops-services/operators/ibm-mq-operator/values.yaml"
+channel_swap "../cp4i-demo/subscriptions/2022.2/07-app-connect-subscription.yaml" "../multi-tenancy-gitops-services/operators/ibm-ace-operator/values.yaml"
+
+instance_swap "../cp4i-demo/instances/2022.2/01-platform-navigator-instance.yaml" "../multi-tenancy-gitops-services/instances/ibm-platform-navigator-instance/values.yaml"
 
 cp ../cp4i-demo/instances/2022.2/02-asset-repo-ai-instance.yaml  ../multi-tenancy-gitops-services/instances/assetrepo
 
