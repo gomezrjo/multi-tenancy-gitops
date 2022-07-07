@@ -27,7 +27,17 @@ channel_swap "../cp4i-demo/subscriptions/2022.2/05-event-streams-subscription.ya
 channel_swap "../cp4i-demo/subscriptions/2022.2/06-mq-subscription.yaml" "../multi-tenancy-gitops-services/operators/ibm-mq-operator/values.yaml"
 channel_swap "../cp4i-demo/subscriptions/2022.2/07-app-connect-subscription.yaml" "../multi-tenancy-gitops-services/operators/ibm-ace-operator/values.yaml"
 
+channel_swap "../cp4i-demo/subscriptions/2022.2/01-platform-navigator-subscription.yaml" "0-bootstrap/single-cluster/2-services/argocd/operators/ibm-platform-navigator.yaml"
+channel_swap "../cp4i-demo/subscriptions/2022.2/02-asset-repo-subscription.yaml" "0-bootstrap/single-cluster/2-services/argocd/operators/ibm-assetrepository-operator.yaml"
+channel_swap "../cp4i-demo/subscriptions/2022.2/03-operations-dashboard-subscription.yaml" "0-bootstrap/single-cluster/2-services/argocd/operators/ibm-opsdashboard-operator.yaml"
+channel_swap "../cp4i-demo/subscriptions/2022.2/04-api-connect-subscription.yaml" "0-bootstrap/single-cluster/2-services/argocd/operators/ibm-apic-operator.yaml"
+channel_swap "../cp4i-demo/subscriptions/2022.2/05-event-streams-subscription.yaml" "0-bootstrap/single-cluster/2-services/argocd/operators/ibm-eventstreams-operator.yaml"
+channel_swap "../cp4i-demo/subscriptions/2022.2/06-mq-subscription.yaml" "0-bootstrap/single-cluster/2-services/argocd/operators/ibm-mq-operator.yaml"
+channel_swap "../cp4i-demo/subscriptions/2022.2/07-app-connect-subscription.yaml" "0-bootstrap/single-cluster/2-services/argocd/operators/ibm-ace-operator.yaml"
+
 instance_swap "../cp4i-demo/instances/2022.2/01-platform-navigator-instance.yaml" "../multi-tenancy-gitops-services/instances/ibm-platform-navigator-instance/values.yaml"
+
+instance_swap "../cp4i-demo/instances/2022.2/01-platform-navigator-instance.yaml" "0-bootstrap/single-instance/2-services/argocd/instances/ibm-platform-navigator-instance.yaml"
 
 cp ../cp4i-demo/instances/2022.2/02-asset-repo-ai-instance.yaml  ../multi-tenancy-gitops-services/instances/assetrepo
 
