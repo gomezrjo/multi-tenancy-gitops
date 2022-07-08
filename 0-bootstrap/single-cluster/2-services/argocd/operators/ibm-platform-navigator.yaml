@@ -17,18 +17,6 @@ spec:
   project: services
   source:
     path: operators/ibm-platform-navigator
-    helm:
-      values: |
-        ibm-platform-navigator:
-          subscriptions:
-            platformnavigator:
-              name: ibm-platform-navigator
-              subscription:
-                channel: 
-                installPlanApproval: Automatic
-                name: ibm-integration-platform-navigator
-                source: ibm-operator-catalog
-                sourceNamespace: openshift-marketplace
   syncPolicy:
     automated:
       prune: true

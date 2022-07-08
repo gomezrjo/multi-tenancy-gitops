@@ -17,18 +17,6 @@ spec:
   project: services
   source:
     path: operators/ibm-mq-operator
-    helm:
-      values: |
-        ibm-mq-operator:
-          subscriptions:
-            ibmmq:
-              name: ibm-mq
-              subscription:
-                channel: 
-                installPlanApproval: Automatic
-                name: ibm-mq
-                source: ibm-operator-catalog
-                sourceNamespace: openshift-marketplace
   syncPolicy:
     automated:
       prune: true

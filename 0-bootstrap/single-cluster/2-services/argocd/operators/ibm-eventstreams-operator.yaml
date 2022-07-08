@@ -17,18 +17,6 @@ spec:
   project: services
   source:
     path: operators/ibm-eventstreams-operator
-    helm:
-      values: |
-        ibm-eventstreams-operator:
-          subscriptions:
-            ibmeventstreams:
-              name: ibm-eventstreams
-              subscription:
-                channel: 
-                installPlanApproval: Automatic
-                name: ibm-eventstreams
-                source: ibm-operator-catalog
-                sourceNamespace: openshift-marketplace
   syncPolicy:
     automated:
       prune: true

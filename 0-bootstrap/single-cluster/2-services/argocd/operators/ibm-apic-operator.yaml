@@ -17,18 +17,6 @@ spec:
   project: services
   source:
     path: operators/ibm-apic-operator
-    helm:
-      values: |
-        ibm-apic-operator:
-          subscriptions:
-            ibmapic:
-              name: ibm-apic
-              subscription:
-                channel: 
-                installPlanApproval: Automatic
-                name: ibm-apiconnect
-                source: ibm-operator-catalog
-                sourceNamespace: openshift-marketplace
   syncPolicy:
     automated:
       prune: true

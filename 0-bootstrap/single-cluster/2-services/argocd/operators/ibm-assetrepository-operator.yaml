@@ -17,18 +17,6 @@ spec:
   project: services
   source:
     path: operators/ibm-assetrepository-operator
-    helm:
-      values: |
-        ibm-assetrepository-operator:
-          subscriptions:
-            ibmassetrepo:
-              name: ibm-assetrepo
-              subscription:
-                channel: 
-                installPlanApproval: Automatic
-                name: ibm-integration-asset-repository
-                source: ibm-operator-catalog
-                sourceNamespace: openshift-marketplace
   syncPolicy:
     automated:
       prune: true

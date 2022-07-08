@@ -17,18 +17,6 @@ spec:
   project: services
   source:
     path: operators/ibm-opsdashboard-operator
-    helm:
-      values: |
-        ibm-opsdashboard-operator:
-          subscriptions:
-            ibmopsdashboard:
-              name: ibm-opsdashboard
-              subscription:
-                channel: 
-                installPlanApproval: Automatic
-                name: ibm-integration-operations-dashboard
-                source: ibm-operator-catalog
-                sourceNamespace: openshift-marketplace
   syncPolicy:
     automated:
       prune: true

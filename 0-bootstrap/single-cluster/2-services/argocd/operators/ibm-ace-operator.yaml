@@ -17,18 +17,6 @@ spec:
   project: services
   source:
     path: operators/ibm-ace-operator
-    helm:
-      values: |
-        ibm-ace-operator:
-          subscriptions:
-            ibmace:
-              name: ibm-ace
-              subscription:
-                channel: 
-                installPlanApproval: Automatic
-                name: ibm-appconnect
-                source: ibm-operator-catalog
-                sourceNamespace: openshift-marketplace
   syncPolicy:
     automated:
       prune: true
