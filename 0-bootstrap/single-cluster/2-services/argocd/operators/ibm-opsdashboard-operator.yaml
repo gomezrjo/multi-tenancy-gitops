@@ -24,7 +24,7 @@ spec:
             ibmopsdashboard:
               name: ibm-opsdashboard
               subscription:
-                channel: v2.6-lts
+                channel: 
                 installPlanApproval: Automatic
                 name: ibm-integration-operations-dashboard
                 source: ibm-operator-catalog

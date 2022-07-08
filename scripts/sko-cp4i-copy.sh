@@ -7,7 +7,9 @@ set -x
 channel_swap () {
     channel=$(cat $1 | grep channel | cut -d":" -f2 | xargs)
     oldchnl=$(cat $2 | grep channel | cut -d":" -f2 | xargs)
-    sed -i"bak" "s#${oldchnl}#${channel}#g" $2
+    catalog=$(cat $1 | grep channel | cut -d":" -f2 | xargs)
+    oldcatl=$(cat $2 | grep channel | cut -d":" -f2 | xargs)
+    sed -i"bak" "s#${oldchnl}#${channel}#g;s#${oldcatl}#${CATALOG}#g" $2
     rm ${2}bak
 }
 instance_swap () {

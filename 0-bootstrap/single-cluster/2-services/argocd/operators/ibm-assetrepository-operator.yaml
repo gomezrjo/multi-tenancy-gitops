@@ -24,7 +24,7 @@ spec:
             ibmassetrepo:
               name: ibm-assetrepo
               subscription:
-                channel: v1.5
+                channel: 
                 installPlanApproval: Automatic
                 name: ibm-integration-asset-repository
                 source: ibm-operator-catalog
