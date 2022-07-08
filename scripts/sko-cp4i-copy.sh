@@ -39,6 +39,8 @@ instance_swap "../cp4i-demo/instances/2022.2/01-platform-navigator-instance.yaml
 
 instance_swap "../cp4i-demo/instances/2022.2/01-platform-navigator-instance.yaml" "0-bootstrap/single-instance/2-services/argocd/instances/ibm-platform-navigator-instance.yaml"
 
+cp ../cp4i-demo/artifacts/00-cp4i-catalog-sources.yaml  ../multi-tenancy-gitops-services/operators/ibm-catalogs
+
 cp ../cp4i-demo/instances/2022.2/02-asset-repo-ai-instance.yaml  ../multi-tenancy-gitops-services/instances/assetrepo
 
 cp ../cp4i-demo/instances/2022.2/03-operations-dashboard-instance.yaml ../multi-tenancy-gitops-services/instances/opsdashboard
