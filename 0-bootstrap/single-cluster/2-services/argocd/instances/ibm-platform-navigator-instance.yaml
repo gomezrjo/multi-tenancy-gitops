@@ -19,19 +19,3 @@ spec:
   project: services
   source:
     path: instances/ibm-platform-navigator-instance
-    helm:
-      values: |
-        ibm-platform-navigator-instance:
-          ibmplatformnavigator:
-            name: integration-navigator
-            spec:
-              license:
-                accept: true
-                license: L-RJON-C7QG3S
-              requestIbmServices:
-                licensing: true
-              mqDashboard: true
-              replicas: 3
-              storage:
-                class: managed-nfs-storage
-              version: 2021.4.1
